@@ -16,30 +16,47 @@
 
 package com.example.compose.rally
 
-import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithText
 import com.example.compose.rally.ui.overview.OverviewBody
 import org.junit.Rule
 import org.junit.Test
 
-class OverviewScreenTest {
+class ClickSeeAllTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
+    val buttonSeeAll= hasText("SEE ALL") and hasClickAction() and hasTestTag("See all one") // yes hasContentDescription("See all one")
 
     @Test
-    fun overviewScreen_alertsDisplayed() {
+    fun clickSeeAll() {
 
         composeTestRule.setContent {
             OverviewBody()
+
+            Thread.sleep(3000)
         }
 
         composeTestRule
 
 
-            .onNodeWithText("Alerts")
-            .assertIsDisplayed()
+                // false busca en all arbol true busca en una parte especifica
+
+            .onNodeWithTag("See all one", useUnmergedTree = true).performClick()
+
+
+           // YES .onNode(buttonSeeAll).performClick()
+
+            //.onNodeWithTag(buttonSeeAll.toString()).performClick()
+          //.onNodeWithText("SEE ALL").performClick()
+           // .onAllNodesWithContentDescription("SEE ALL").assertAll(hasClickAction())
+            //.onNodeWithText("SEE ALL")
+           // .performClick()
+        // .onNodeWithText("SEE ALL")
+        Thread.sleep(3000)
+        Thread.sleep(3000)
 
     }
 }
+
+
