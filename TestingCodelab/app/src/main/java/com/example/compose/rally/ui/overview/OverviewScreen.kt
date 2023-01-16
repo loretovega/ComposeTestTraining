@@ -98,6 +98,7 @@ private fun AlertCard() {
             },
             bodyText = alertMessage,
             buttonText = "Dismiss".uppercase(Locale.getDefault())
+
         )
     }
 

@@ -26,7 +26,7 @@ class ClickSeeAllTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
-    val buttonSeeAll= hasText("SEE ALL") and hasClickAction() and hasTestTag("See all one") // yes hasContentDescription("See all one")
+    //val buttonSeeAll= hasText("SEE ALL") and hasClickAction() and hasTestTag("See all one") // yes hasContentDescription("See all one")
 
     @Test
     fun clickSeeAll() {
@@ -45,18 +45,27 @@ class ClickSeeAllTest {
             .onNodeWithTag("See all one", useUnmergedTree = true).performClick()
 
 
-           // YES .onNode(buttonSeeAll).performClick()
+        composeTestRule
 
-            //.onNodeWithTag(buttonSeeAll.toString()).performClick()
-          //.onNodeWithText("SEE ALL").performClick()
-           // .onAllNodesWithContentDescription("SEE ALL").assertAll(hasClickAction())
-            //.onNodeWithText("SEE ALL")
-           // .performClick()
-        // .onNodeWithText("SEE ALL")
+            .onNodeWithText("DISMISS").performClick()
+
         Thread.sleep(3000)
+
+
+
         Thread.sleep(3000)
 
     }
 }
 
+
+
+// YES .onNode(buttonSeeAll).performClick()
+
+//.onNodeWithTag(buttonSeeAll.toString()).performClick()
+//.onNodeWithText("SEE ALL").performClick()
+// .onAllNodesWithContentDescription("SEE ALL").assertAll(hasClickAction())
+//.onNodeWithText("SEE ALL")
+// .performClick()
+// .onNodeWithText("SEE ALL")
 
