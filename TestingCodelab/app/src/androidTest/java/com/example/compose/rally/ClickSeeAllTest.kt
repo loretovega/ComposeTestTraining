@@ -39,19 +39,13 @@ class ClickSeeAllTest {
 
         composeTestRule
 
-
                 // false busca en all arbol true busca en una parte especifica
 
             .onNodeWithTag("See all one", useUnmergedTree = true).performClick()
 
-
         composeTestRule
 
             .onNodeWithText("DISMISS").performClick()
-
-        Thread.sleep(3000)
-
-
 
         Thread.sleep(3000)
 
